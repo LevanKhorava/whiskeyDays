@@ -1,6 +1,6 @@
 const Location = () => {
   return (
-    <div className="text-center mt-[70px]  border-[10px] border-black md:p-[50px]">
+    <div className="text-center md:mt-[70px]  border-[10px] border-black">
       <h2 className="text-[20px] font-[700]">Location</h2>
       <h2 className="text-[20px] font-[700]">17 Kutateladze st</h2>
       <iframe
@@ -9,8 +9,8 @@ const Location = () => {
         // height="450"
         style={{
           border: "0",
-          width: "80%",
-          height: "400px",
+          width: "100%",
+          height: "600px",
           margin: "auto",
           marginTop: "70px",
         }}
