@@ -63,7 +63,7 @@ const Header = () => {
       <div className="hidden  md:flex bg-black gap-[40px] w-[100%] justify-center  sticky top-0  p-4 z-10 flex-wrap">
         <p className="font-[700] text-white text-[28px]">HOME</p>
         <p className="font-[700] text-white text-[28px]">INFO</p>
-        <p className="font-[700] text-white text-[28px]">PHTOS</p>
+        <p className="font-[700] text-white text-[28px]">GALLERY</p>
         <p className="font-[700] text-white text-[28px]">ABOUT</p>
         <p className="font-[700] text-white text-[28px]">CONTACT</p>
       </div>
