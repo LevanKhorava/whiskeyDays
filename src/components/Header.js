@@ -1,5 +1,4 @@
 import { useState } from "react";
-import photo from "../asssets/logo pasledni.png";
 
 const Header = () => {
   const [showMenu, setShowMenue] = useState(false);
@@ -15,12 +14,18 @@ const Header = () => {
         </div>
       ) : null}
       <div
-        className="w-[100%] h-[440px]"
+        className="w-[100%] h-[650px]"
         style={{
-          backgroundImage: `url(${"https://static.vecteezy.com/system/resources/thumbnails/021/885/272/small_2x/wooden-wall-background-or-wood-texture-photo.jpg"})`,
+          backgroundImage: `url(/coveri.png)`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+
+          // backgroundSize: "cover", // Adjust background size as needed
+          // backgroundPosition: "center", // Center the background image
+          // width: "100%",
         }}
       >
-        <img src={photo} width="300px" className="m-auto" />
+        {/* <img src={photo} width="300px" className="m-auto" /> */}
 
         <svg
           viewBox="0 0 24 24"
