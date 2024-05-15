@@ -5,15 +5,28 @@ import Location from "./components/Location";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
+import img1 from "./asssets/img1.png";
+import img2 from "./asssets/img2.png";
+import img3 from "./asssets/img3.png";
+import img4 from "./asssets/img4.png";
+import img5 from "./asssets/img5.png";
+import img6 from "./asssets/img6.png";
+import img7 from "./asssets/img7.png";
+import img8 from "./asssets/img8.png";
+import img9 from "./asssets/img9.png";
 
 // import required modules
 import { EffectCoverflow, Pagination } from "swiper/modules";
 import { SwiperSlide, Swiper } from "swiper/react";
+import Exhibitants from "./components/Exhibitants";
+import Clock from "./components/Clock";
 
 function App() {
+  let deadline = "September, 10, 2024";
   return (
     <div className="app">
       <Header />
+      <Clock deadline={deadline} />
       <Location />
       <h1 className="md:mt-[100px] font-bold text-[30px] text-center">
         Swipe to see photos
@@ -22,7 +35,7 @@ function App() {
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={"auto"}
+        slidesPerView={1.1}
         coverflowEffect={{
           rotate: 50,
           stretch: 0,
@@ -32,21 +45,37 @@ function App() {
         }}
         pagination={true}
         modules={[EffectCoverflow, Pagination]}
-        className="md:w-[1000px] h-[500px]"
+        className="md:w-[1000px] md:h-[600px] h-[300px]"
       >
         <SwiperSlide>
-          <img
-            className="w-[200px] h-[500px]"
-            src="https://maverickwhiskey.com/wp-content/uploads/2018/10/10-Terms-Whiskey-Lovers-Need-To-Know.jpeg"
-          />
+          <img src={img1} className="h-[300px] md:h-[700px]" alt="photo" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://www.europeanbusinessreview.com/wp-content/uploads/2021/02/Whiskey-copy.png" />
+          <img src={img2} className="h-[300px] md:h-[700px]" alt="photo" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://readypeace.com/cdn/shop/products/717gsVlDnjS._AC_SL1500.jpg?v=1642091436&width=1500" />
+          <img src={img3} className="h-[300px] md:h-[700px]" alt="photo" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={img4} className="h-[300px] md:h-[700px]" alt="photo" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={img5} className="h-[300px] md:h-[700px]" alt="photo" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={img6} className="h-[300px] md:h-[700px]" alt="photo" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={img7} className="h-[300px] md:h-[700px]" alt="photo" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={img8} className="h-[300px] md:h-[700px]" alt="photo" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={img9} className="h-[300px] md:h-[700px]" alt="photo" />
         </SwiperSlide>
       </Swiper>
+      <Exhibitants />
     </div>
   );
 }
