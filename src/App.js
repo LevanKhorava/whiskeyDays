@@ -75,7 +75,7 @@ function App() {
           <img src={img9} className="h-[300px] md:h-[700px]" alt="photo" />
         </SwiperSlide>
       </Swiper>
-      <Exhibitants />
+      {/* <Exhibitants /> */}
     </div>
   );
 }
