@@ -1,53 +1,65 @@
 import React, { useEffect, useState } from "react";
 
 const Clock = ({ deadline }) => {
-  const [days, setDays] = useState(0);
-  const [hours, setHours] = useState(0);
-  const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(0);
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
 
-  const leading0 = (num) => {
-    return num < 10 ? "0" + num : num;
-  };
+  const leading0 = (num) => (num < 10 ? "0" + num : num);
 
   const getTimeUntil = (deadline) => {
     const time = Date.parse(deadline) - Date.parse(new Date());
     if (time < 0) {
-      setDays(0);
-      setHours(0);
-      setMinutes(0);
-      setSeconds(0);
+      setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
     } else {
-      setDays(Math.floor(time / (1000 * 60 * 60 * 24)));
-      setHours(Math.floor((time / (1000 * 60 * 60)) % 24));
-      setMinutes(Math.floor((time / 1000 / 60) % 60));
-      setSeconds(Math.floor((time / 1000) % 60));
+      setTimeLeft({
+        days: Math.floor(time / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((time / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((time / 1000 / 60) % 60),
+        seconds: Math.floor((time / 1000) % 60),
+      });
     }
   };
 
   useEffect(() => {
-    setInterval(() => getTimeUntil(deadline), 1000);
-
-    return () => getTimeUntil(deadline);
+    const interval = setInterval(() => getTimeUntil(deadline), 1000);
+    return () => clearInterval(interval);
   }, [deadline]);
 
   return (
-    <div className="bg-rose-950 p-[50px]">
-      <h1 className="text-center text-[25px] md:text-[40px] text-white  font-bold mb-[40px]">
-        ფესტივალის დაწყებამდე დარჩა!
-      </h1>
-      <div className="flex flex-col text-white   items-start w-[280px] m-auto mt-[40px] ">
-        <div className=" font-bold text-[25px] md:text-[50px]">
-          {leading0(days)} Days
-        </div>
-        <div className="font-bold text-white text-[25px] md:text-[50px]">
-          {leading0(hours)} Hours
-        </div>
-        <div className="font-bold text-white text-[25px] md:text-[50px]">
-          {leading0(minutes)} Minutes
-        </div>
-        <div className="font-bold text-white text-[25px] md:text-[50px]">
-          {leading0(seconds)} Seconds
+    <div className="w-[100%] bg-green-800 md:p-[40px]">
+      <div className="bg-gradient-to-r from-gray-800 via-slate-500 to-slate-950 p-10 md:rounded-xl shadow-2xl max-w-lg mx-auto   text-center">
+        <h1 className="text-white text-4xl md:text-6xl font-extrabold mb-10 animate-pulse">
+          ფესტივალის დაწყებამდე დარჩა!
+        </h1>
+        <div className="grid grid-cols-2 gap-4 text-white">
+          <div className="flex flex-col items-center p-4 bg-white bg-opacity-10 rounded-lg border border-white border-opacity-20 shadow-lg">
+            <div className="text-5xl md:text-7xl font-extrabold">
+              {leading0(timeLeft.days)}
+            </div>
+            <div className="text-xl md:text-2xl">Days</div>
+          </div>
+          <div className="flex flex-col items-center p-4 bg-white bg-opacity-10 rounded-lg border border-white border-opacity-20 shadow-lg">
+            <div className="text-5xl md:text-7xl font-extrabold">
+              {leading0(timeLeft.hours)}
+            </div>
+            <div className="text-xl md:text-2xl">Hours</div>
+          </div>
+          <div className="flex flex-col items-center p-4 bg-white bg-opacity-10 rounded-lg border border-white border-opacity-20 shadow-lg">
+            <div className="text-5xl md:text-7xl font-extrabold">
+              {leading0(timeLeft.minutes)}
+            </div>
+            <div className="text-xl md:text-2xl">Minutes</div>
+          </div>
+          <div className="flex flex-col items-center p-4 bg-white bg-opacity-10 rounded-lg border border-white border-opacity-20 shadow-lg">
+            <div className="text-5xl md:text-7xl font-extrabold">
+              {leading0(timeLeft.seconds)}
+            </div>
+            <div className="text-xl md:text-2xl">Seconds</div>
+          </div>
         </div>
       </div>
     </div>

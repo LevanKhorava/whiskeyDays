@@ -17,11 +17,11 @@ const Header = () => {
         className="w-[100%] h-[650px]"
         style={{
           backgroundImage: `url(/coveri.png)`,
-          backgroundRepeat: "no-repeat",
+          // backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
 
-          // backgroundSize: "cover", // Adjust background size as needed
-          // backgroundPosition: "center", // Center the background image
+          // backgroundSize: "contain", // Adjust background size as needed
+          backgroundPosition: "center", // Center the background image
           // width: "100%",
         }}
       >
