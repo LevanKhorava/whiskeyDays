@@ -20,6 +20,8 @@ import { EffectCoverflow, Pagination } from "swiper/modules";
 import { SwiperSlide, Swiper } from "swiper/react";
 import Exhibitants from "./components/Exhibitants";
 import Clock from "./components/Clock";
+import Info from "./Info";
+import Footer from "./components/Footer";
 
 function App() {
   let deadline = "September, 10, 2024";
@@ -75,6 +77,8 @@ function App() {
           <img src={img9} className="h-[300px] md:h-[700px]" alt="photo" />
         </SwiperSlide>
       </Swiper>
+      <Info />
+      <Footer />
       {/* <Exhibitants /> */}
     </div>
   );
