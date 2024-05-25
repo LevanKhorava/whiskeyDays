@@ -26,59 +26,65 @@ import Footer from "./components/Footer";
 function App() {
   let deadline = "September, 10, 2024";
   return (
-    <div className="app">
+    <div className="app scroll-smooth">
       <Header />
       <Clock deadline={deadline} />
       <Location />
       <h1 className="md:mt-[100px] font-bold text-[30px] text-center">
         Swipe to see photos
       </h1>
-      <Swiper
-        effect={"coverflow"}
-        grabCursor={true}
-        centeredSlides={true}
-        slidesPerView={1.1}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
-        }}
-        pagination={true}
-        modules={[EffectCoverflow, Pagination]}
-        className="md:w-[1000px] md:h-[600px] h-[300px]"
-      >
-        <SwiperSlide>
-          <img src={img1} className="h-[300px] md:h-[700px]" alt="photo" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={img2} className="h-[300px] md:h-[700px]" alt="photo" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={img3} className="h-[300px] md:h-[700px]" alt="photo" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={img4} className="h-[300px] md:h-[700px]" alt="photo" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={img5} className="h-[300px] md:h-[700px]" alt="photo" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={img6} className="h-[300px] md:h-[700px]" alt="photo" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={img7} className="h-[300px] md:h-[700px]" alt="photo" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={img8} className="h-[300px] md:h-[700px]" alt="photo" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={img9} className="h-[300px] md:h-[700px]" alt="photo" />
-        </SwiperSlide>
-      </Swiper>
-      <Info />
-      <Footer />
+      <div id="gallery">
+        <Swiper
+          effect={"coverflow"}
+          grabCursor={true}
+          centeredSlides={true}
+          slidesPerView={1.1}
+          coverflowEffect={{
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+          }}
+          pagination={true}
+          modules={[EffectCoverflow, Pagination]}
+          className="md:w-[1000px] md:h-[600px] h-[300px]"
+        >
+          <SwiperSlide>
+            <img src={img1} className="h-[300px] md:h-[700px]" alt="photo" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={img2} className="h-[300px] md:h-[700px]" alt="photo" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={img3} className="h-[300px] md:h-[700px]" alt="photo" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={img4} className="h-[300px] md:h-[700px]" alt="photo" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={img5} className="h-[300px] md:h-[700px]" alt="photo" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={img6} className="h-[300px] md:h-[700px]" alt="photo" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={img7} className="h-[300px] md:h-[700px]" alt="photo" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={img8} className="h-[300px] md:h-[700px]" alt="photo" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={img9} className="h-[300px] md:h-[700px]" alt="photo" />
+          </SwiperSlide>
+        </Swiper>
+      </div>
+      <div id="info">
+        <Info />
+      </div>
+      <div id="contact">
+        <Footer />
+      </div>
       {/* <Exhibitants /> */}
     </div>
   );

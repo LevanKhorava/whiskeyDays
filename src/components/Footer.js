@@ -1,5 +1,6 @@
 import React from "react";
 import img from "../asssets/logo-pasledni-_1_.png";
+// import gif from "../asssets/gif.gif";
 
 const Footer = () => {
   return (
@@ -32,6 +33,7 @@ const Footer = () => {
         </div>
 
         <img src={img} alt="Whisky Glass" className="w-[200px] " />
+        {/* <img src={gif} /> */}
         <div className="">
           <div className="flex justify-center md:justify-end space-x-4">
             <a
