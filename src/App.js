@@ -27,9 +27,9 @@ function App() {
   let deadline = "September, 10, 2024";
   return (
     <div className="app scroll-smooth">
-      <Header />
+      {/* <Header /> */}
       <Clock deadline={deadline} />
-      <Location />
+      {/* <Location />
       <h1 className="md:mt-[100px] font-bold text-[30px] text-center">
         Swipe to see photos
       </h1>
@@ -84,7 +84,7 @@ function App() {
       </div>
       <div id="contact">
         <Footer />
-      </div>
+      </div> */}
       {/* <Exhibitants /> */}
     </div>
   );

@@ -30,7 +30,7 @@ const Clock = ({ deadline }) => {
   }, [deadline]);
 
   return (
-    <div className="w-[100%] bg-stone-700 md:p-[40px]">
+    <div className="w-[100%]   md:p-[40px]">
       <div className="bg-gradient-to-r from-gray-800 via-slate-500 to-slate-950 p-10 md:rounded-xl shadow-2xl max-w-lg mx-auto   text-center">
         <h1 className="text-white text-4xl md:text-6xl font-extrabold mb-10 animate-pulse">
           ფესტივალის დაწყებამდე დარჩა!
